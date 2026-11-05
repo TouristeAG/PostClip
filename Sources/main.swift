@@ -1,0 +1,8 @@
+import AppKit
+
+MainActor.assumeIsolated { Snapshot.runIfRequested() }
+let app = NSApplication.shared
+let delegate = AppDelegate()
+app.delegate = delegate
+app.setActivationPolicy(.accessory) // pas d'icône dans le Dock, juste la barre des menus
+app.run()
