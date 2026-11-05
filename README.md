@@ -11,10 +11,17 @@ Historique du presse-papiers pour macOS, façon Windows (Win+V) : **⌘V** ouvre
 
 Application native (Swift, AppKit + SwiftUI), sans dépendance, pour macOS 13 et plus (Intel et Apple Silicon).
 
-## Installation
+## Téléchargement
+
+Télécharger **PostClip-1.0.dmg** depuis la page [Releases](https://github.com/TouristeAG/PostClip/releases/latest), ouvrir le DMG et glisser PostClip dans Applications.
+
+L'app n'est pas notarisée par Apple : au premier lancement, faire **clic droit → Ouvrir** (ou Réglages Système → Confidentialité et sécurité → « Ouvrir quand même »).
+
+## Compiler depuis les sources
 
 ```bash
-./build.sh install
+./build.sh install   # compile, installe dans /Applications et lance
+./make_dmg.sh        # crée build/PostClip-<version>.dmg
 ```
 
 Nécessite Xcode ou les Command Line Tools (`xcode-select --install`). Puis autoriser PostClip dans **Réglages Système → Confidentialité et sécurité → Accessibilité** (nécessaire pour intercepter ⌘V et coller). L'app est signée « ad hoc » : après chaque rebuild il faut ré-accorder cette autorisation.
